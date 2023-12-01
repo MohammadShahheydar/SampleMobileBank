@@ -25,19 +25,12 @@ function Layout() {
                             style={{
                                 position: 'absolute',
                                 height: '90%',
-                                left: '0',
+                                left: '-5%',
+                                top: 0,
                                 opacity: .2,
                             }}
                             src={'/res/svg/dollar.svg'}
                         />
-                        {/*<StyledBox*/}
-                        {/*    position={'absolute'}*/}
-                        {/*    zIndex={1}*/}
-                        {/*    width={'100%'}*/}
-                        {/*    height={'100%'}*/}
-                        {/*    // @ts-ignore*/}
-                        {/*    */}
-                        {/*/>*/}
                         <StyledStack gap={5} width={'100%'} justifyContent={'flex-start'} position={'relative'} zIndex={2}>
                             <StyledStack>
                                 <Typography variant={'caption'} color={theme => theme.palette.primary.contrastText}>

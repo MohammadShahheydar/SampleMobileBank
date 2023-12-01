@@ -1,5 +1,4 @@
 import axios, {AxiosResponse, InternalAxiosRequestConfig} from "axios";
-import * as process from "process";
 
 const configHeaders = () => {
     const header: Record<string, string | undefined> = {
@@ -14,7 +13,7 @@ const createApiInstance = (options: {
     withCredentials?: boolean
 }) => {
     const api = axios.create({
-        baseURL: process.env.BASE_DOMAIN,
+        baseURL: process.env.REACT_APP_BASE_DOMAIN,
         withCredentials: options.withCredentials,
         headers: configHeaders()
     });

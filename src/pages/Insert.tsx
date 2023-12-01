@@ -7,7 +7,6 @@ import {StyledStack} from "../ui/style/StyledStack";
 import {StyledButton} from "../ui/style/StyledButton";
 import {Typography} from "@mui/material";
 import AddTransactionValidation from "../features/app/ui/validation/AddTransactionValidation";
-import {FormikTextField} from "../ui/formik/FormikTextField";
 import InputItem from "../features/app/ui/component/InputItem";
 
 function Insert() {
@@ -31,14 +30,18 @@ function Insert() {
                     </Typography>
                 </StyledButton>
             </StyledStack>
-            <AddTransactionValidation>
+            <AddTransactionValidation
+                onSubmit={values => {
+                    console.log(values)
+                }}
+            >
                 {(formik, keys) => (
                     <StyledStack mt={5} gap={3} justifyContent={'center'} alignItems={'center'}>
-                        <InputItem label={'تاریخ'} formik={formik} key={keys?.date}/>
-                        <InputItem label={'مبلغ'} formik={formik} key={keys?.price}/>
-                        <InputItem label={'دسته بندی'} formik={formik} key={keys?.category}/>
-                        <InputItem label={'یادداشت'} formik={formik} key={keys?.note}/>
-                        <StyledButton variant={'contained'} width={'70%'} sx={{marginTop: '30px'}}>
+                        <InputItem label={'تاریخ'} formik={formik} formikKey={keys?.date}/>
+                        <InputItem label={'مبلغ'} formik={formik} formikKey={keys?.price}/>
+                        <InputItem label={'دسته بندی'} formik={formik} formikKey={keys?.category}/>
+                        <InputItem label={'یادداشت'} formik={formik} formikKey={keys?.note}/>
+                        <StyledButton variant={'contained'} width={'70%'} sx={{marginTop: '35px'}} type={'submit'}>
                             <Typography whiteSpace={'nowrap'}>
                                 ذخیر
                             </Typography>

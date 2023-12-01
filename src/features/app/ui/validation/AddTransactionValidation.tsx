@@ -8,10 +8,10 @@ export class KeysType {
 }
 
 export interface ValuesType {
-    date?: number[] | string[]
-    price?: number[] | string[]
-    category?: number
-    note?: number
+    date?: string
+    price?: string
+    category?: string
+    note?: string
 }
 
 export const AddTransactionValidation = (props: Validation<ValuesType, KeysType>) => {
@@ -20,6 +20,10 @@ export const AddTransactionValidation = (props: Validation<ValuesType, KeysType>
         validationSchema: yup.object({
         }),
         initialValues: {
+            date: undefined,
+            price: undefined,
+            category: undefined,
+            note: undefined,
         },
         emptyObjectOfValidationType: new KeysType()
     })

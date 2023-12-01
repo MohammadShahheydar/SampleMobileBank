@@ -13,26 +13,26 @@ function Layout() {
     const [open, setOpen] = useState(false);
 
     return (
-        <StyledBox styledScroll width={'100%'} height={'100dvh'} backgroundColor={theme => theme.palette.background.paper}>
-            <StyledCard backgroundColor={theme => theme.palette.primary.main} p={10} borderRadius={10} width={'100%'} boxShadow={theme => theme.shadows[3]}>
+        <StyledBox styledScroll width={'100%'} height={'100dvh'} overflow={'auto'} backgroundColor={theme => theme.palette.background.paper}>
+            <StyledCard backgroundColor={theme => theme.palette.primary.main} p={6} borderRadius={10} width={'100%'} boxShadow={theme => theme.shadows[3]}>
                 <StyledStack flexDirection={'row'} width={'100%'} justifyContent={'flex-start'} alignItems={'center'}>
                     <StyledIconButton onClick={() => setOpen(prevState => !prevState)}>
                         <IconMenu color={theme => theme.palette.background.paper}/>
                     </StyledIconButton>
                 </StyledStack>
                 <Collapse in={open}>
-                    <StyledBox py={2} px={1} position={'relative'}>
+                    <StyledBox position={'relative'}>
                         <img
                             style={{
                                 position: 'absolute',
                                 height: '90%',
-                                left: '-5%',
+                                left: 0,
                                 top: 0,
                                 opacity: .2,
                             }}
                             src={'/res/svg/dollar.svg'}
                         />
-                        <StyledStack gap={5} width={'100%'} justifyContent={'flex-start'} position={'relative'} zIndex={2}>
+                        <StyledStack py={2} px={1} gap={5} width={'100%'} justifyContent={'flex-start'} position={'relative'} zIndex={2}>
                             <StyledStack>
                                 <Typography variant={'caption'} color={theme => theme.palette.primary.contrastText}>
                                     خوش آمدید

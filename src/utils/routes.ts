@@ -1,5 +1,5 @@
 export const routes = {
     home: () => '/',
-    add: () => 'add',
-    filter: () => 'filter'
+    add: () => '/add',
+    filter: () => '/filter'
 }

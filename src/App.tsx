@@ -5,6 +5,7 @@ import {QueryClient, QueryClientProvider} from "react-query";
 import Router from "./Routes/Router";
 import Rtl from "./ui/theme/providers/Rtl";
 import {rootTheme} from "./ui/theme/rootTheme";
+import './global.css'
 
 const queryClient = new QueryClient({
     defaultOptions: {

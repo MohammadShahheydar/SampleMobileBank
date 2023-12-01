@@ -15,10 +15,8 @@ function Layout() {
     let navigate = useNavigate();
     let location = useLocation();
 
-    console.log(location)
-
     return (
-        <StyledBox position={'relative'} styledScroll width={'100%'} height={'100dvh'} overflow={'auto'} backgroundColor={theme => theme.palette.background.paper}>
+        <StyledBox maxWidth={'500px'} mx={'auto'} position={'relative'} styledScroll width={'100%'} height={'100dvh'} overflow={'auto'} backgroundColor={theme => theme.palette.background.paper}>
             <StyledCard backgroundColor={theme => theme.palette.primary.main} p={6} borderRadius={10} width={'100%'} boxShadow={theme => theme.shadows[3]}>
                 <StyledStack flexDirection={'row'} width={'100%'} justifyContent={'flex-start'} alignItems={'center'}>
                     <StyledIconButton onClick={() => setOpen(prevState => !prevState)}>

@@ -34,7 +34,6 @@ function Home() {
                 <TransactionItem title={'پرداخت قسط'} icon={<IconTick color={theme => theme.palette.background.paper}/>} amount={Number('90000000')}/>
                 <TransactionItem title={'خرید خوراکی'} icon={<IconBasket color={theme => theme.palette.background.paper}/>} amount={Number('90000000')}/>
                 <TransactionItem title={'پرداخت شارژ ماهانه'} icon={<IconTextList color={theme => theme.palette.background.paper}/>} amount={Number('90000000')}/>
-
             </StyledStack>
         </StyledBox>
     );

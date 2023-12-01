@@ -102,13 +102,13 @@ export const rootTheme = createTheme({
             contrastText: "#fff"
         },
         secondary: {
-            main: "#008bff",
+            main: "#39acff",
         },
         warning: {
             main: "#FE9210",
         },
         info: {
-            main: "#63C19F",
+            main: "#008bff",
         },
         success: {
             main: "#9FC031",

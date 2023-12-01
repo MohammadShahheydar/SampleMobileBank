@@ -8,12 +8,17 @@ import {StyledStack} from "../style/StyledStack";
 import {StyledIconButton} from "../style/StyledIconButton";
 import {Collapse, Typography} from "@mui/material";
 import IconMenu from "../icon/IconMenu";
-import {Outlet} from "react-router-dom";
+import {Outlet, useLocation, useNavigate} from "react-router-dom";
+import {routes} from "../../utils/routes";
 function Layout() {
     const [open, setOpen] = useState(false);
+    let navigate = useNavigate();
+    let location = useLocation();
+
+    console.log(location)
 
     return (
-        <StyledBox styledScroll width={'100%'} height={'100dvh'} overflow={'auto'} backgroundColor={theme => theme.palette.background.paper}>
+        <StyledBox position={'relative'} styledScroll width={'100%'} height={'100dvh'} overflow={'auto'} backgroundColor={theme => theme.palette.background.paper}>
             <StyledCard backgroundColor={theme => theme.palette.primary.main} p={6} borderRadius={10} width={'100%'} boxShadow={theme => theme.shadows[3]}>
                 <StyledStack flexDirection={'row'} width={'100%'} justifyContent={'flex-start'} alignItems={'center'}>
                     <StyledIconButton onClick={() => setOpen(prevState => !prevState)}>
@@ -53,21 +58,25 @@ function Layout() {
                     </StyledBox>
                 </Collapse>
             </StyledCard>
-            <StyledBox p={5}>
+            <StyledBox px={4} py={6}>
                 <Outlet/>
             </StyledBox>
-            <StyledFab
-                size={"medium"}
-                color={"primary"} backgroundColor={theme => theme.palette.primary.main}
-                bottom={15}
-                left={15}
-                position={"sticky"}
-                onClick={() => {
-                    alert('add trans')
-                }}
-            >
-                <AddCircleOutlineRoundedIcon/>
-            </StyledFab>
+            {
+                !location.pathname.includes(routes.add()) && (
+                    <StyledFab
+                        size={"medium"}
+                        color={"primary"} backgroundColor={theme => theme.palette.primary.main}
+                        bottom={10}
+                        left={15}
+                        position={"fixed"}
+                        onClick={() => {
+                            navigate(routes.add())
+                        }}
+                    >
+                        <AddCircleOutlineRoundedIcon/>
+                    </StyledFab>
+                )
+            }
         </StyledBox>
     );
 }

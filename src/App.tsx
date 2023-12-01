@@ -6,6 +6,7 @@ import Router from "./Routes/Router";
 import Rtl from "./ui/theme/providers/Rtl";
 import {rootTheme} from "./ui/theme/rootTheme";
 import './global.css'
+require('dotenv').config()
 
 const queryClient = new QueryClient({
     defaultOptions: {

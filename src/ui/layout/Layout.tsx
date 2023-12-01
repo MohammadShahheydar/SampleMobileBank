@@ -8,11 +8,12 @@ import {StyledStack} from "../style/StyledStack";
 import {StyledIconButton} from "../style/StyledIconButton";
 import {Collapse, Typography} from "@mui/material";
 import IconMenu from "../icon/IconMenu";
+import {Outlet} from "react-router-dom";
 function Layout() {
     const [open, setOpen] = useState(false);
 
     return (
-        <StyledBox width={'100%'} height={'100dvh'} backgroundColor={theme => theme.palette.background.paper}>
+        <StyledBox styledScroll width={'100%'} height={'100dvh'} backgroundColor={theme => theme.palette.background.paper}>
             <StyledCard backgroundColor={theme => theme.palette.primary.main} p={10} borderRadius={10} width={'100%'} boxShadow={theme => theme.shadows[3]}>
                 <StyledStack flexDirection={'row'} width={'100%'} justifyContent={'flex-start'} alignItems={'center'}>
                     <StyledIconButton onClick={() => setOpen(prevState => !prevState)}>
@@ -52,12 +53,15 @@ function Layout() {
                     </StyledBox>
                 </Collapse>
             </StyledCard>
+            <StyledBox p={5}>
+                <Outlet/>
+            </StyledBox>
             <StyledFab
                 size={"medium"}
                 color={"primary"} backgroundColor={theme => theme.palette.primary.main}
                 bottom={15}
                 left={15}
-                position={"absolute"}
+                position={"sticky"}
                 onClick={() => {
                     alert('add trans')
                 }}

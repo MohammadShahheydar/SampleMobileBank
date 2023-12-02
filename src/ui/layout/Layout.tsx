@@ -13,6 +13,7 @@ import {useQuery} from "react-query";
 import {homeApi} from "../../api/service/home/HomeApi";
 import {SkeletonLoading} from "../utils/SkeletonLoading";
 import {Skeleton} from "@mui/lab";
+import Profile from "../../features/app/ui/component/Profile";
 
 function Layout() {
     const [open, setOpen] = useState(false);
@@ -31,45 +32,7 @@ function Layout() {
                     </StyledIconButton>
                 </StyledStack>
                 <Collapse in={open}>
-                    <StyledBox position={'relative'}>
-                        <img
-                            style={{
-                                position: 'absolute',
-                                height: '90%',
-                                left: 0,
-                                top: 0,
-                                opacity: .2,
-                            }}
-                            src={'/res/svg/dollar.svg'}
-                        />
-                        <StyledStack py={2} px={1} gap={5} width={'100%'} justifyContent={'flex-start'}
-                                     position={'relative'} zIndex={2}>
-                            <StyledStack>
-                                <Typography variant={'caption'} color={theme => theme.palette.primary.contrastText}>
-                                    خوش آمدید
-                                </Typography>
-                                <SkeletonLoading width={'25%'} maxWidth={'200px'} loading={isLoading} numberOfSkeleton={1} skeletonItem={
-                                    <Skeleton variant={'text'} animation={'wave'} width={'100%'} height={'45px'}/>
-                                }>
-                                    <Typography variant={'body1'} color={theme => theme.palette.primary.contrastText}>
-                                        {data?.data?.fullname ?? "محمد شاه حیدر"}
-                                    </Typography>
-                                </SkeletonLoading>
-                            </StyledStack>
-                            <StyledStack>
-                                <Typography variant={'caption'} color={theme => theme.palette.primary.contrastText}>
-                                    موجودی
-                                </Typography>
-                                <SkeletonLoading width={'35%'} maxWidth={'200px'} loading={isLoading} numberOfSkeleton={1} skeletonItem={
-                                    <Skeleton variant={'text'} animation={'wave'} width={'100%'} height={'45px'}/>
-                                }>
-                                    <Typography variant={'body1'} color={theme => theme.palette.primary.contrastText}>
-                                        {Number('90000000').toLocaleString()} ریال
-                                    </Typography>
-                                </SkeletonLoading>
-                            </StyledStack>
-                        </StyledStack>
-                    </StyledBox>
+                    <Profile fullName={data?.data?.fullname} balance={data?.data?.balance}/>
                 </Collapse>
             </StyledCard>
             <StyledBox p={4}>

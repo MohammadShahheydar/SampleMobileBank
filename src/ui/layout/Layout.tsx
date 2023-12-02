@@ -32,7 +32,7 @@ function Layout() {
                     </StyledIconButton>
                 </StyledStack>
                 <Collapse in={open}>
-                    <Profile fullName={data?.data?.fullname} balance={data?.data?.balance}/>
+                    <Profile fullName={data?.data?.fullname} balance={data?.data?.balance} isLoading={isLoading}/>
                 </Collapse>
             </StyledCard>
             <StyledBox p={4}>

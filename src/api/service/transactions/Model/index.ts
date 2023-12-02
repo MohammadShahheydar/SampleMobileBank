@@ -1,6 +1,6 @@
 import {Transaction} from "../../home/Model";
 
-export interface TransactionsApi {
+export interface TransactionsApiModel {
     transactions: Transaction[],
     diff: number,
     income_sum: number,

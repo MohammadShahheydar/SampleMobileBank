@@ -16,8 +16,8 @@ function Transactions({transactions, loading}: {
 }) {
     return (
         <StyledStack gap={2}>
-            <SkeletonLoading gap={2} loading={loading} numberOfSkeleton={10} width={'100%'} skeletonItem={
-                <Skeleton variant={'rounded'} animation={'wave'} width={'100%'} height={'60px'}/>
+            <SkeletonLoading gap={2} loading={loading} numberOfSkeleton={4} width={'100%'} skeletonItem={
+                <Skeleton variant={'rounded'} animation={'wave'} width={'100%'} height={'55px'}/>
             }>
                 {
                     transactions ?
@@ -28,30 +28,6 @@ function Transactions({transactions, loading}: {
                         ))) :
                         (
                             <>
-                                <TransactionItem title={'برداشت وجه نقد'}
-                                                 icon={<IconCash color={theme => theme.palette.background.paper}/>}
-                                                 amount={Number('90000000')}/>
-                                <TransactionItem title={'پرداخت قسط'}
-                                                 icon={<IconTick color={theme => theme.palette.background.paper}/>}
-                                                 amount={Number('90000000')}/>
-                                <TransactionItem title={'خرید خوراکی'}
-                                                 icon={<IconBasket color={theme => theme.palette.background.paper}/>}
-                                                 amount={Number('90000000')}/>
-                                <TransactionItem title={'پرداخت شارژ ماهانه'}
-                                                 icon={<IconTextList color={theme => theme.palette.background.paper}/>}
-                                                 amount={Number('90000000')}/>
-                                <TransactionItem title={'برداشت وجه نقد'}
-                                                 icon={<IconCash color={theme => theme.palette.background.paper}/>}
-                                                 amount={Number('90000000')}/>
-                                <TransactionItem title={'پرداخت قسط'}
-                                                 icon={<IconTick color={theme => theme.palette.background.paper}/>}
-                                                 amount={Number('90000000')}/>
-                                <TransactionItem title={'خرید خوراکی'}
-                                                 icon={<IconBasket color={theme => theme.palette.background.paper}/>}
-                                                 amount={Number('90000000')}/>
-                                <TransactionItem title={'پرداخت شارژ ماهانه'}
-                                                 icon={<IconTextList color={theme => theme.palette.background.paper}/>}
-                                                 amount={Number('90000000')}/>
                                 <TransactionItem title={'برداشت وجه نقد'}
                                                  icon={<IconCash color={theme => theme.palette.background.paper}/>}
                                                  amount={Number('90000000')}/>

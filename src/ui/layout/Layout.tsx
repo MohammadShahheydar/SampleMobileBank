@@ -72,7 +72,7 @@ function Layout() {
                     </StyledBox>
                 </Collapse>
             </StyledCard>
-            <StyledBox px={4} py={6}>
+            <StyledBox p={4}>
                 <Outlet/>
             </StyledBox>
             {

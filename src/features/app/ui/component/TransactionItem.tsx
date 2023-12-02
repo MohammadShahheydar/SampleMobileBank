@@ -8,7 +8,7 @@ function TransactionItem({icon , amount ,title}: {icon: ReactNode , title: strin
     return (
         <StyledStack flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'}>
             <StyledStack flexDirection={'row'} gap={1} alignItems={'center'}>
-                <StyledFab borderRadius={15} width={50} height={45} backgroundColor={theme => theme.palette.primary.light}>
+                <StyledFab zIndex={1} borderRadius={15} width={50} height={45} backgroundColor={theme => theme.palette.primary.light}>
                     {icon}
                 </StyledFab>
                 <Typography variant={'body1'}>

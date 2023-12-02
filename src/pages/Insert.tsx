@@ -9,25 +9,20 @@ import {Typography} from "@mui/material";
 import AddTransactionValidation from "../features/app/ui/validation/AddTransactionValidation";
 import InputItem from "../features/app/ui/component/InputItem";
 import {FormikValue} from "../data/validation/Validation";
+import {useMutation} from "react-query";
+import {transactionsApi} from "../api/service/transactions/TransactionsApi";
+import {routes} from "../utils/routes";
+import BackLink from "../features/app/ui/component/BackLink";
 
 function Insert() {
-    let navigate = useNavigate();
-
-    function handleTypeChange(value: string, formik: FormikValue) {
-        formik.setFieldValue('type', 'incom')
-
-    }
+    let {mutate , isLoading} = useMutation(transactionsApi().addTransactions());
 
     return (
         <StyledBox>
-            <StyledBox width={'100%'}>
-                <StyledIconButton sx={{transform: 'rotate(180deg)'}} onClick={() => navigate(-1)}>
-                    <KeyboardBackspaceRoundedIcon fontSize={'large'} color={'info'}/>
-                </StyledIconButton>
-            </StyledBox>
+            <BackLink/>
             <AddTransactionValidation
                 onSubmit={values => {
-                    console.log(values)
+                    mutate(values)
                 }}
             >
                 {(formik, keys) => (
@@ -57,7 +52,7 @@ function Insert() {
                             <InputItem label={'مبلغ'} formik={formik} formikKey={keys?.price}/>
                             <InputItem label={'دسته بندی'} formik={formik} formikKey={keys?.category}/>
                             <InputItem label={'یادداشت'} formik={formik} formikKey={keys?.note}/>
-                            <StyledButton variant={'contained'} width={'70%'} sx={{marginTop: '35px'}}
+                            <StyledButton loading={isLoading} variant={'contained'} width={'70%'} sx={{marginTop: '35px'}}
                                           type={'submit'}>
                                 <Typography whiteSpace={'nowrap'}>
                                     ذخیر

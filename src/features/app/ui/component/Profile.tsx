@@ -5,7 +5,7 @@ import {SkeletonLoading} from "../../../../ui/utils/SkeletonLoading";
 import {Skeleton} from "@mui/lab";
 import {StyledBox} from "../../../../ui/style/StyledBox";
 
-function Profile({fullName , balance , isLoading}: {fullName?: string , balance?: number , isLoading?: boolean}) {
+function Profile({fullName , balance , isLoading}: {fullName?: string , balance?: number , isLoading: boolean}) {
     return (
         <StyledBox position={'relative'}>
             <img
